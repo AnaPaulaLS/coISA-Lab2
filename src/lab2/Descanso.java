@@ -2,21 +2,25 @@ package lab2;
 
 public class Descanso {
     private int horasDescanso;
-    private int numeroSemanas;
+    private int numerosSemana;
 
-    public void defineNumeroSemanas(int valor) {
-        numeroSemanas = valor;
+    public Descanso(){
+        horasDescanso = 0;
+        numerosSemana = 0;
+    }
+    //Tá faltando só o metodo defineHorasDescanso
+    public void defineHorasDescanso(int ndescanso){
+        horasDescanso = ndescanso;
     }
 
-    public String getStatusGeral() {
-        if (numeroSemanas == 0) {
-            return "cansado";
-        }
-        double horasPorSemana = (double) horasDescanso / numeroSemanas;
-        if (horasPorSemana >= 26) {
-            return "descansado";
-        }else{
-         return "cansado";
-        }
+    public void defineNumeroSemanas(int valor){
+        numerosSemana = valor;
+    }
+
+
+    public String getStatusGeral(){
+        if (numerosSemana == 0) return "cansado";
+        if (horasDescanso / numerosSemana >= 26 ) return "descansado";
+        return "cansado";
     }
 }

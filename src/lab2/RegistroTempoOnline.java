@@ -1,32 +1,43 @@
 package lab2;
 
 public class RegistroTempoOnline {
-    private String nomeDisciplina;
-    private int tempoOnline;
+    private String nomedaDisciplina;
     private int tempoOnlineEsperado;
+    private int tempoInvestido;
 
-    public RegistroTempoOnline(String nomeDisciplina){
-        this.nomeDisciplina = nomeDisciplina;
-        this.tempoOnline = 0;
-        this.tempoOnlineEsperado = 120;
+    public RegistroTempoOnline(String nomedaDisciplina){
+        this.nomedaDisciplina = nomedaDisciplina;
+        tempoOnlineEsperado = 120;
+        //É legal definir o 120 como uma constante;
+        tempoInvestido = 0;
     }
 
-    public RegistroTempoOnline(String nomeDisciplina, int tempoOnlineEsperado) {
-        this.nomeDisciplina = nomeDisciplina;
-        this.tempoOnline = 0;
+    public RegistroTempoOnline(String nomedaDisciplina, int tempoOnlineEsperado){
+        this.nomedaDisciplina = nomedaDisciplina;
         this.tempoOnlineEsperado = tempoOnlineEsperado;
+        tempoInvestido = 0;
     }
 
-    public void adicionaTempoOnline(int tempo) {
-        tempoOnline += tempo;
+    public void adicionaTempoOnline(int tempo){
+        tempoInvestido += tempo;
+    }
+
+    public boolean atingiuMeta(int tempo){
+        if (tempoInvestido >= tempoOnlineEsperado) return true;
+        return false;
+    }
+
+    public String toString(){
+        return nomedaDisciplina + " "
+                + tempoInvestido + "/" +
+                tempoOnlineEsperado;
     }
 
     public boolean atingiuMetaTempoOnline(){
-        return tempoOnline >= tempoOnlineEsperado;
-    }
-
-    public String toString() {
-        return nomeDisciplina + " " + tempoOnline + "/" + tempoOnlineEsperado;
+        if (tempoOnlineEsperado <= tempoInvestido){
+            return true;
+        }
+        return false;
     }
 
 }
