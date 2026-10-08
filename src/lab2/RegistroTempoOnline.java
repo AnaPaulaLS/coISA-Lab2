@@ -8,7 +8,6 @@ public class RegistroTempoOnline {
     public RegistroTempoOnline(String nomedaDisciplina){
         this.nomedaDisciplina = nomedaDisciplina;
         tempoOnlineEsperado = 120;
-        //É legal definir o 120 como uma constante;
         tempoInvestido = 0;
     }
 
