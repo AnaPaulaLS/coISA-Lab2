@@ -1,5 +1,9 @@
 package lab2;
 
+/**
+ * Registra o tempo (em horas) que o aluno dedicou online a uma disciplina.
+ * Por padrão, espera-se o dobro das horas de uma disciplina de 60 horas, ou seja, 120 horas.
+ */
 public class RegistroTempoOnline {
     private String nomedaDisciplina;
     private int tempoOnlineEsperado;

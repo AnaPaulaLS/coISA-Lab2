@@ -1,5 +1,8 @@
 package lab2;
 
+/**
+ * Representa um resumo de estudo, composto por um tema e um conteúdo.
+ */
 public class Resumo {
     private String tema;
     private String conteudo;

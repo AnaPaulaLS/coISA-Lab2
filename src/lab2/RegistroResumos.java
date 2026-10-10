@@ -2,6 +2,11 @@ package lab2;
 
 import java.util.Arrays;
 
+/**
+ * Registro de resumos de estudo com capacidade limitada.
+ * Ao atingir o limite, cada novo resumo substitui o mais antigo, em ordem de cadastro.
+ * Não existem dois resumos com o mesmo tema.
+ */
 public class RegistroResumos {
     private Resumo[] resumos;
     private int ponteiro;
