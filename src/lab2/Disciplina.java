@@ -6,24 +6,21 @@ public class Disciplina {
     private double[] notas;
     private int[] pesos;
 
-    public Disciplina(String nomeDisciplina){
-        this.nomeDisciplina = nomeDisciplina;
-        this.notas = new double[4];
-        this.horasEstudo = 0;
-        this.pesos = null;
+    public Disciplina(String nomeDisciplina) {
+        this(nomeDisciplina, 4);
     }
-    public Disciplina(String nomeDisciplina, int numeroDeNotas){
-        this.nomeDisciplina = nomeDisciplina;
-        this.notas = new double[numeroDeNotas];
-        this.horasEstudo = 0;
-        this.pesos = null;
+
+    public Disciplina(String nomeDisciplina, int numeroDeNotas) {
+        this(nomeDisciplina, numeroDeNotas, null);
     }
-    public Disciplina(String nomeDisciplina, int numeroDeNotas, int[] pesos){
+
+    public Disciplina(String nomeDisciplina, int numeroDeNotas, int[] pesos) {
         this.nomeDisciplina = nomeDisciplina;
         this.horasEstudo = 0;
         this.notas = new double[numeroDeNotas];
         this.pesos = pesos;
     }
+
 
     public void cadastraHoras(int horas){
         horasEstudo += horas;
@@ -56,7 +53,6 @@ public class Disciplina {
         return calculaMedia() >= 7.0;
     }
 
-    @Override
     public String toString() {
         String resultado = nomeDisciplina + " " + horasEstudo + " " + calculaMedia() + " [";
         for(int i = 0; i < notas.length; i++){
@@ -66,7 +62,6 @@ public class Disciplina {
                 resultado += ", ";
             }
         }
-
         return resultado + "]";
     }
 }

@@ -1,38 +1,35 @@
 package lab2;
 
+import java.util.Arrays;
+
 public class RegistroResumos {
     private Resumo[] resumos;
     private int ponteiro;
+    private int limite;
     private int quantidade;
 
-    public RegistroResumos(int numeroDeResumos){
-        this.resumos = new Resumo[numeroDeResumos];
-        this.ponteiro = 0;
-        this.quantidade = 0;
+    public RegistroResumos(int nresumos){
+        this.resumos = new Resumo[nresumos];
+        ponteiro = 0;
+        limite = nresumos;
+        quantidade = 0;
     }
 
     public void adiciona(String tema, String conteudo) {
-        if (temResumo(tema)) {
-            return;
-        }
-        resumos[ponteiro] = new Resumo(tema, conteudo);
-
-        if (quantidade < resumos.length){
-            quantidade++;
-        }
-
-        if (ponteiro == resumos.length) {
-            ponteiro = 0;
-        }
+        Resumo novo_resumo = new Resumo(tema,conteudo);
+        resumos[ponteiro] = novo_resumo;
+        ponteiro++;
+        if (quantidade < limite) quantidade++;
+        if (ponteiro >= limite) ponteiro = 0;
     }
 
     public String[] pegaResumos(){
-        String[] resultado = new String[quantidade];
-
-        for(int i = 0; i < quantidade; i++){
-            resultado[i] = resumos[i].toString();
+        int limite = resumos.length;
+        String[] osResumos = new String[limite];
+        for (int i=0;i<quantidade;i++){
+            osResumos[i] = this.resumos[i].toString();
         }
-        return resultado;
+        return osResumos;
     }
 
     public String imprimeResumos() {
@@ -50,12 +47,25 @@ public class RegistroResumos {
     }
 
     public boolean temResumo(String tema){
-        for (String t1 : this.resumos[i].getTema()){
+        for (Resumo t1 : resumos){
             if (t1 == null) continue;
-            if (t1.equals(tema)) return true;
+            if (t1.getTema().equals(tema)) return true;
         }
         return false;
     }
 
+    public String[] busca(String chaveDeBusca) {
+        String chave = chaveDeBusca.toLowerCase();
+        String[] temp = new String[quantidade];
+        int n = 0;
+        for (int i = 0; i < quantidade; i++) {
+            if (resumos[i].getConteudo().toLowerCase().contains(chave)) {
+                temp[n++] = resumos[i].getTema();
+            }
+        }
+        String[] encontrados = Arrays.copyOf(temp, n);
+        Arrays.sort(encontrados);
+        return encontrados;
+    }
 
 }

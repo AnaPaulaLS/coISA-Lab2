@@ -61,7 +61,6 @@ public class Coisa {
             System.out.println(resumos[i]);
         }
 
-
         System.out.println();
         System.out.println("Resumos: ");
         System.out.println(meusResumos.imprimeResumos());

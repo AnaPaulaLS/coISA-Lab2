@@ -8,7 +8,7 @@ public class Descanso {
         horasDescanso = 0;
         numerosSemana = 0;
     }
-    //Tá faltando só o metodo defineHorasDescanso
+
     public void defineHorasDescanso(int ndescanso){
         horasDescanso = ndescanso;
     }
@@ -16,7 +16,6 @@ public class Descanso {
     public void defineNumeroSemanas(int valor){
         numerosSemana = valor;
     }
-
 
     public String getStatusGeral(){
         if (numerosSemana == 0) return "cansado";

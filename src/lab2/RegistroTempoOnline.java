@@ -31,7 +31,6 @@ public class RegistroTempoOnline {
                 + tempoInvestido + "/" +
                 tempoOnlineEsperado;
     }
-
     public boolean atingiuMetaTempoOnline(){
         if (tempoOnlineEsperado <= tempoInvestido){
             return true;
