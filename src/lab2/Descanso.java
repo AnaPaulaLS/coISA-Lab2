@@ -1,9 +1,11 @@
 package lab2;
 
 /**
- * Controla a rotina de descanso do aluno.
+ * A clase Descanso controla a rotina de descanso do aluno.
  * O aluno é considerado descansado quando descansa 26 horas por semana ou mais.
- * Se nenhuma hora ou semana foi registrada, o aluno começa cansado.
+ * Por padrão, o status começa como cansado.
+ *
+ * @author Ana Paula Leal Sousa
  */
 public class Descanso {
     private int horasDescanso;

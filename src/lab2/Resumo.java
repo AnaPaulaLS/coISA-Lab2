@@ -1,7 +1,9 @@
 package lab2;
 
 /**
- * Representa um resumo de estudo, composto por um tema e um conteúdo.
+ * A classe Resumo representa um resumo de estudo, composto por um tema e um conteúdo.
+ *
+ * @author Ana Paula Leal Sousa
  */
 public class Resumo {
     private String tema;
@@ -12,15 +14,15 @@ public class Resumo {
         this.conteudo = conteudo;
     }
 
-    public String toString() {
-        return tema + ": " + conteudo;
-    }
-
-    public String getTema() {
+    public String pegaTema() {
         return tema;
     }
 
-    public String getConteudo() {
+    public String pegaConteudo() {
         return conteudo;
+    }
+
+    public String toString() {
+        return tema + ": " + conteudo;
     }
 }

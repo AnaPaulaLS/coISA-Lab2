@@ -1,9 +1,11 @@
 package lab2;
 
 /**
- * Representa uma disciplina com horas de estudo e notas.
- * A média pode ser aritmética (padrão) ou ponderada, se forem informados pesos.
- * Notas não cadastradas valem zero. O aluno é aprovado com média igual ou acima de 7.0.
+ * A classe Disciplina representa uma disciplina definida pelo aluno com horas de estudo e notas.
+ * A média pode ser aritmética ou ponderada, se forem informados pesos.
+ * O aluno é aprovado com média igual ou acima de 7.0.
+ *
+ * @author Ana Paula Leal Sousa
  */
 public class Disciplina {
     private String nomeDisciplina;

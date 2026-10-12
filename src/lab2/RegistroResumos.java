@@ -3,9 +3,12 @@ package lab2;
 import java.util.Arrays;
 
 /**
- * Registro de resumos de estudo com capacidade limitada.
- * Ao atingir o limite, cada novo resumo substitui o mais antigo, em ordem de cadastro.
- * Não existem dois resumos com o mesmo tema.
+ * A classe RegitroResumos acompanha os estudos a partir de um
+ * registro de resumos de assuntos estudados. É possível
+ * inicializar um registro que armazenará uma quantidade limitada de resumos.
+ * Ao atingir o limite, cada novo resumo substitui o mais antigo.
+ *
+ * @author Ana Paula Leal Sousa
  */
 public class RegistroResumos {
     private Resumo[] resumos;
@@ -41,8 +44,8 @@ public class RegistroResumos {
         String acc = "";
         acc += "- " + quantidade + " resumo(s) cadastrado(s) \n- ";
         for (int i=0; i<quantidade; i++){
-            if (i==quantidade-1) acc += resumos[i].getTema();
-            else acc += resumos[i].getTema() + " | ";
+            if (i==quantidade-1) acc += resumos[i].pegaTema();
+            else acc += resumos[i].pegaTema() + " | ";
         }
         return acc;
     }
@@ -54,7 +57,7 @@ public class RegistroResumos {
     public boolean temResumo(String tema){
         for (Resumo t1 : resumos){
             if (t1 == null) continue;
-            if (t1.getTema().equals(tema)) return true;
+            if (t1.pegaTema().equals(tema)) return true;
         }
         return false;
     }
@@ -64,8 +67,8 @@ public class RegistroResumos {
         String[] temp = new String[quantidade];
         int n = 0;
         for (int i = 0; i < quantidade; i++) {
-            if (resumos[i].getConteudo().toLowerCase().contains(chave)) {
-                temp[n++] = resumos[i].getTema();
+            if (resumos[i].pegaConteudo().toLowerCase().contains(chave)) {
+                temp[n++] = resumos[i].pegaTema();
             }
         }
         String[] encontrados = Arrays.copyOf(temp, n);
