@@ -67,7 +67,7 @@ Resumo
 - conteudo: String
 ---
 + Resumo(tema: String, conteudo: String)
-+ getTema(): String
-+ getConteudo(): String
++ pegaTema(): String
++ pegaConteudo(): String
 + toString(): String
 ---
